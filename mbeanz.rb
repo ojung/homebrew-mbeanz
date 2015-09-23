@@ -24,13 +24,23 @@ class Mbeanz < Formula
       end
     end
 
+    conf = <<-EOS.undent
+      {
+        :object-pattern "java.lang:*"
+        :jmx-remote-host "localhost"
+        :jmx-remote-port 11080
+      }
+    EOS
+
+    open("#{etc}/mbeanz.conf", "w") { |file| file.write(conf) }
+
     bin.install Dir["./*"]
   end
 
   def caveats
     <<-EOS.undent
 
-      You need to update the config file `/etc/mbeanz.conf` to make the mbeanz api aware of your jvm.
+      You need to update the config file `#{etc}/mbeanz.conf` to make the mbeanz api aware of your jvm.
     EOS
   end
 
