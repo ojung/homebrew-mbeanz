@@ -57,7 +57,7 @@ class Mbeanz < Formula
                   <string>java</string>
                   <string>-jar</string>
                   <string>#{bin}/mbeanz-0.1.0-SNAPSHOT-standalone.jar</string>
-                  <string>/etc/mbeanz.conf</string>
+                  <string>#{etc}/mbeanz.conf</string>
               </array>
               <key>KeepAlive</key>
               <true/>
