@@ -38,7 +38,7 @@ class Mbeanz < Formula
   def caveats
     <<-EOS.undent
 
-      You'll need to update the config file `#{etc}/mbeanz.edn` to make the mbeanz api aware of your jvm.
+      You will need to update the config file `#{etc}/mbeanz.edn` to make the mbeanz api aware of your jvm.
     EOS
   end
 
