@@ -1,9 +1,9 @@
 class Mbeanz < Formula
   desc "A tool for fuzzy finding and invoking mbean operations."
   homepage "https://github.com/ojung/mbeanz"
-  url "https://github.com/ojung/mbeanz/releases/download/v0.1.0-alpha/mbeanz-0.1.0-alpha.tar.xz"
-  version "0.1.0-alpha"
-  sha256 "99e34ed3690a105e5881a68bb201aab549ca8a3c922ce9f00c5fb9ed00011959"
+  url "https://github.com/ojung/mbeanz/releases/download/v1.0.0-beta/mbeanz-1.0.0-beta.tar.xz"
+  version "1.0.0-beta"
+  sha256 "4be611ae3b78b20c2ddcd10de0dbd94f9bdb65e2e7d3b690e42233f01f0dfa1f"
 
   depends_on :python if MacOS.version <= :snow_leopard
 
@@ -25,14 +25,12 @@ class Mbeanz < Formula
     end
 
     conf = <<-EOS.undent
-      {
-        :object-pattern "java.lang:*"
-        :jmx-remote-host "localhost"
-        :jmx-remote-port 11080
-      }
+      {:local {:object-pattern "java.lang:*"
+               :jmx-remote-host "localhost"
+               :jmx-remote-port 11080}}
     EOS
 
-    open("#{etc}/mbeanz.conf", "w") { |file| file.write(conf) }
+    open("#{etc}/mbeanz.edn", "w") { |file| file.write(conf) }
 
     bin.install Dir["./*"]
   end
@@ -40,7 +38,7 @@ class Mbeanz < Formula
   def caveats
     <<-EOS.undent
 
-      You need to update the config file `#{etc}/mbeanz.conf` to make the mbeanz api aware of your jvm.
+      You'll need to update the config file `#{etc}/mbeanz.edn` to make the mbeanz api aware of your jvm.
     EOS
   end
 
@@ -56,17 +54,13 @@ class Mbeanz < Formula
               <array>
                   <string>java</string>
                   <string>-jar</string>
-                  <string>#{bin}/mbeanz-0.1.0-SNAPSHOT-standalone.jar</string>
-                  <string>#{etc}/mbeanz.conf</string>
+                  <string>#{bin}/mbeanz-1.0.0-beta-SNAPSHOT-standalone.jar</string>
+                  <string>#{etc}/mbeanz.edn</string>
               </array>
               <key>KeepAlive</key>
               <true/>
           </dict>
       </plist>
     EOS
-  end
-
-  test do
-    system "true"
   end
 end
