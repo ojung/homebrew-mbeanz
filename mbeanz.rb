@@ -3,7 +3,7 @@ class Mbeanz < Formula
   homepage "https://github.com/ojung/mbeanz"
   url "https://github.com/ojung/mbeanz/releases/download/v1.0.2-beta/mbeanz-1.0.2-beta.tar.xz"
   version "1.0.1-beta"
-  sha256 "0db8834b7b87f29a05e07eb2d7b1be552c37bc7ebf2c3e739f39d77ebb768db3"
+  sha256 "a8ae505a39bff2ab717667aae97c70682e887ad2a8e734f0b45ef07779c56e93"
 
   depends_on :python if MacOS.version <= :snow_leopard
 
