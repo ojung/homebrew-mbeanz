@@ -2,7 +2,7 @@ class Mbeanz < Formula
   desc "A tool for fuzzy finding and invoking mbean operations."
   homepage "https://github.com/ojung/mbeanz"
   url "https://github.com/ojung/mbeanz/releases/download/v1.0.2-beta/mbeanz-1.0.2-beta.tar.xz"
-  version "1.0.1-beta"
+  version "1.0.2-beta"
   sha256 "a8ae505a39bff2ab717667aae97c70682e887ad2a8e734f0b45ef07779c56e93"
 
   depends_on :python if MacOS.version <= :snow_leopard
