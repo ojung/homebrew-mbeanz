@@ -24,7 +24,7 @@ class Mbeanz < Formula
       end
     end
 
-    if (not exists?("#{etc}/mbeanz.edn")) then
+    if (not exist?("#{etc}/mbeanz.edn")) then
       conf = <<-EOS.undent
       {:local {:object-pattern "java.lang:*"
                :jmx-remote-host "localhost"
