@@ -1,9 +1,9 @@
 class Mbeanz < Formula
   desc "A tool for fuzzy finding and invoking mbean operations."
   homepage "https://github.com/ojung/mbeanz"
-  url "https://github.com/ojung/mbeanz/releases/download/v1.0.2-beta/mbeanz-1.0.2-beta.tar.xz"
-  version "1.0.2-beta"
-  sha256 "0db8834b7b87f29a05e07eb2d7b1be552c37bc7ebf2c3e739f39d77ebb768db3"
+  url "https://github.com/ojung/mbeanz/releases/download/v1.0.4/mbeanz-1.0.4.tar.xz"
+  version "1.0.4"
+  sha256 "a34055e87c171cb9011acbc5317aa97fd8b2efed6f617a1333e8ef2f41f89abc"
 
   depends_on :python if MacOS.version <= :snow_leopard
 
@@ -24,13 +24,15 @@ class Mbeanz < Formula
       end
     end
 
-    conf = <<-EOS.undent
+    if (not file?("#{etc}/mbeanz.edn")) then
+      conf = <<-EOS.undent
       {:local {:object-pattern "java.lang:*"
                :jmx-remote-host "localhost"
                :jmx-remote-port 11080}}
-    EOS
+      EOS
 
-    open("#{etc}/mbeanz.edn", "w") { |file| file.write(conf) }
+      open("#{etc}/mbeanz.edn", "w") { |file| file.write(conf) }
+    end
 
     bin.install Dir["./*"]
   end
