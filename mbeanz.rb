@@ -56,7 +56,7 @@ class Mbeanz < Formula
               <array>
                   <string>java</string>
                   <string>-jar</string>
-                  <string>#{bin}/mbeanz-1.0.0-beta-SNAPSHOT-standalone.jar</string>
+                  <string>#{bin}/mbeanz-1.0.4-SNAPSHOT-standalone.jar</string>
                   <string>#{etc}/mbeanz.edn</string>
               </array>
               <key>KeepAlive</key>
