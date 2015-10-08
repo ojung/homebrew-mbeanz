@@ -8,7 +8,6 @@ class Mbeanz < Formula
   depends_on :python if MacOS.version <= :snow_leopard
 
   depends_on "fzf"
-  depends_on "requests" => :python
 
   resource "requests" do
     url "https://pypi.python.org/packages/source/r/requests/requests-2.7.0.tar.gz"
