@@ -5,7 +5,7 @@ class Mbeanz < Formula
   version "1.0.4"
   sha256 "589e2c1dc8af7f94f1d2fdfb9ce901784bd187c79841252dd076dfe7c3768ce7"
 
-  depends_on :python if MacOS.version <= :snow_leopard
+  depends_on :python
 
   depends_on "fzf"
 
@@ -15,12 +15,8 @@ class Mbeanz < Formula
   end
 
   def install
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
-
-    resources.each do |r|
-      r.stage do
-        system "python", *Language::Python.setup_install_args(libexec/"vendor")
-      end
+    resource("requests").stage do
+      system "python", *Language::Python.setup_install_args(libexec/"vendor")
     end
 
     if (not File.exists?("#{etc}/mbeanz.edn")) then
