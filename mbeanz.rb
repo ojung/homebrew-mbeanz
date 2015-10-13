@@ -1,9 +1,9 @@
 class Mbeanz < Formula
   desc "A tool for fuzzy finding and invoking mbean operations."
   homepage "https://github.com/ojung/mbeanz"
-  url "https://github.com/ojung/mbeanz/releases/download/v1.0.4/mbeanz-1.0.4.tar.xz"
-  version "1.0.4"
-  sha256 "589e2c1dc8af7f94f1d2fdfb9ce901784bd187c79841252dd076dfe7c3768ce7"
+  url "https://github.com/ojung/mbeanz/releases/download/v1.1.1/mbeanz-1.1.1.tar.xz"
+  version "1.1.1"
+  sha256 "673a4aac2a5ebb818d4c2fefc32413a87e21b51caaed5896660f272747465d5f"
 
   depends_on :python
 
@@ -51,7 +51,7 @@ class Mbeanz < Formula
               <array>
                   <string>java</string>
                   <string>-jar</string>
-                  <string>#{bin}/mbeanz-1.0.4-SNAPSHOT-standalone.jar</string>
+                  <string>#{bin}/mbeanz-1.1.1-SNAPSHOT-standalone.jar</string>
                   <string>#{etc}/mbeanz.edn</string>
               </array>
               <key>KeepAlive</key>
