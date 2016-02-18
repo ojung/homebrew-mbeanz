@@ -9,16 +9,9 @@ class Mbeanz < Formula
 
   depends_on "fzf"
 
-  resource "requests" do
-    url "https://pypi.python.org/packages/source/r/requests/requests-2.7.0.tar.gz"
-    sha256 "398a3db6d61899d25fd4a06c6ca12051b0ce171d705decd7ed5511517b4bb93d"
-  end
+  depends_on "requests" => :python
 
   def install
-    resource("requests").stage do
-      system "python", *Language::Python.setup_install_args(libexec/"vendor")
-    end
-
     if (not File.exists?("#{etc}/mbeanz.edn")) then
       conf = <<-EOS.undent
       {:local {:object-pattern "java.lang:*"
