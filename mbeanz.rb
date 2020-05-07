@@ -18,7 +18,7 @@ class Mbeanz < Formula
 
   def install
     if (not File.exists?("#{etc}/mbeanz.edn")) then
-      conf = <<-EOS.undent
+      conf = <<-EOS
       {:local {:object-pattern "java.lang:*"
                :jmx-remote-host "localhost"
                :jmx-remote-port 11080}}
@@ -31,14 +31,14 @@ class Mbeanz < Formula
   end
 
   def caveats
-    <<-EOS.undent
+    <<-EOS
 
       You will need to update the config file `#{etc}/mbeanz.edn` to make the mbeanz api aware of your jvm.
     EOS
   end
 
   def plist
-    <<-EOS.undent
+    <<-EOS
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
       <plist version="1.0">
